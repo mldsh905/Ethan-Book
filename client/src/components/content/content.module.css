@@ -1,0 +1,9 @@
+.container{
+    flex: 5;
+    min-width: 460px;
+}
+.wrapper{
+    padding: 20px;
+    display: grid;
+    gap: 15px;
+}

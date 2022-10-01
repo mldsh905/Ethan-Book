@@ -1,0 +1,110 @@
+.wrapper{
+    box-shadow: 0 0 3px grey;
+    border-radius: 10px;
+}
+.container{
+    padding: 15px 15px;
+    display: grid;
+    gap: 10px;
+}
+.top{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-auto-flow: column;
+}
+.info{
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+    color: black;
+}
+.more{
+    cursor: pointer;
+}
+.info img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid darkgrey;
+}
+.content{
+    display: grid;
+    gap: 15px;
+}
+.content img{
+    width: 100%;
+    object-fit: cover;
+    max-width: 1000px;
+}
+.bottom{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.recommend{
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    align-items: center;
+    cursor: pointer;
+}
+.recommendIcon{
+    color: #3973dd;
+    display: grid;
+    align-items: center;
+}
+.comment{
+    /*cursor: pointer;*/
+}
+.username{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.time{
+    font-weight: 400;
+    font-size: .6rem;
+    padding-top: 3px;
+}
+.like{
+    border: 2px solid gainsboro;
+    border-radius: 50%;
+}
+.dislike{
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.comment{
+    display: grid;
+}
+.commentItem{
+    display: flex;
+    gap: 10px;
+}
+.name{
+    font-weight: 700;
+    color: black;
+}
+.post{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    gap: 5px;
+}
+.post input{
+    padding: 0 5px
+}
+.post button{
+    padding: 0 10px;
+    cursor: pointer;
+    background-color: rgb(72,114,214);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+}

@@ -1,0 +1,23 @@
+.wrapper {
+    flex: 2;
+    height: calc(100vh - 50px);
+    /*background-color: #bfa;*/
+    position: sticky;
+    top: 50px;
+    box-sizing: border-box;
+}
+.container{
+    padding: 30px;
+}
+.list{
+    display: grid;
+    gap: 15px;
+}
+.listItem{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    font-size: 1rem;
+}

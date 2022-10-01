@@ -1,0 +1,27 @@
+.container{
+    display: grid;
+    gap: 5px;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+}
+.profile{
+    display: flex;
+    position: relative;
+}
+.profile img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid gainsboro;
+}
+.dot{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    border: 1px solid white;
+    position: absolute;
+    left:30px
+}

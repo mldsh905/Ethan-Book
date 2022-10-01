@@ -1,0 +1,69 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f6;
+}
+.container{
+    height: 70vh;
+    width: 80vw;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    align-items: center;
+    min-width: 650px;
+}
+.intro{
+    display: grid;
+}
+.title{
+    font-weight: 900;
+    font-size: 3rem;
+    font-family: "Arial Black",sans-serif;
+    color: rgb(52,111,218);
+}
+.text{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.login{
+    background-color: white;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: #3973dd;
+    align-items: center;
+}
+.msg{
+    color: black;
+}
+.login input, .login button, .newaccountbtn{
+    height: 6vh;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+.login input{
+    padding: 0 15px;
+    border: 1px solid gainsboro;
+}
+.loginbtn{
+    background-color:rgb(52,111,218);
+    color: white;
+    border: none;
+    font-weight: 700;
+}
+.newaccountbtn{
+    background-color: rgb(92,166,64);
+    color: white;
+    border: none;
+    font-weight: 700;
+}
+.login button, .login span{
+    cursor: pointer;
+}

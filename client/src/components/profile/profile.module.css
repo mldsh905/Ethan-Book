@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+}
+.data{
+    flex: 7.5;
+}
+.userInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.background{
+    display: flex;
+    position: relative;
+}
+.background img{
+    object-fit: cover;
+}
+.bgimg{
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+.profile{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px whitesmoke solid;
+    position: absolute;
+    bottom: -50px;
+    left:calc(50% - 50px);
+}
+.nameAndIntro{
+    margin-top: 60px;
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+}
+.name{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.intro{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.posts{
+    display: grid;
+    gap: 15px;
+    flex: 5;
+}

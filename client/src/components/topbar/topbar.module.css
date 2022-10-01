@@ -1,0 +1,119 @@
+.wrapper{
+    width: 100vw;
+    background-color: #3973dd;
+    display: flex;
+    min-width: 920px;
+    height: 50px;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    visibility: visible;
+    z-index: 2;
+}
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo{
+    flex: 3;
+    color: white;
+    font-weight: 700;
+    min-width: 200px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.logo span{
+    cursor: pointer;
+}
+.searchBar{
+    flex: 5;
+    background-color: white;
+    height: 30px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+.searchBar input{
+    border: none;
+    width: 80%;
+}
+.searchIcon{
+    margin: 0 10px;
+    cursor: pointer;
+}
+.searchBar input:focus{
+    outline: none;
+}
+.searchBarLink{
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.HT{
+    display: flex;
+    gap: 10px;
+}
+.HT span{
+    cursor: pointer;
+}
+.topBarRight{
+    flex: 4;
+    display: flex;
+    align-items: center;
+    min-width: 320px;
+    white-space: nowrap;
+    gap: 20px;
+    color: white;
+    justify-content: space-between;
+}
+.homepage{
+    color: white;
+    cursor: pointer;
+}
+.icon{
+    display: flex;
+    gap: 10px;
+}
+.iconItem{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.iconItem span{
+    position: absolute;
+    font-size: 0.5rem;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    text-align: center;
+    top: -5px;
+    right: -5px;
+}
+.profile{
+    width: 35px;
+    height: 35px;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.loginBtn{
+    display: flex;
+    gap: 15px;
+    color: white;
+}
+.logout{
+    cursor:pointer;
+}
+.loginBtnIcon{
+    color: white;
+}
