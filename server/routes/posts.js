@@ -1,10 +1,9 @@
 import express from "express";
+const route = express.Router();
+
 import Posts from "../models/Posts.js";
 import Users from "../models/Users.js";
-import { nanoid } from 'nanoid'
-import {verifyToken} from "../utilities/verifyToken.js";
 
-const route = express.Router();
 
 //create a post
 route.post('/', async (req, res) => {
@@ -51,7 +50,7 @@ route.delete('/:id', async (req, res) => {
 route.put('/:id/comment', async (req, res)=>{
     try{
         const post = await Posts.findById(req.params.id);
-        await post.updateOne({$push: {comments: {id: nanoid(), userId: req.body.userId, username: req.body.username, desc: req.body.desc, createAt: new Date()}}});
+        await post.updateOne({$push: {comments: {id: req.body.id, userId: req.body.userId, username: req.body.username, desc: req.body.desc, createAt: new Date()}}});
         res.status(200).json(post)
     }catch (e) {
         res.status(500).json(e)

@@ -5,6 +5,7 @@ import axios from "axios";
 import {format} from "timeago.js";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {nanoid} from "nanoid";
 
 const Post = (props) => {
     // console.log(props.props);
@@ -49,7 +50,7 @@ const Post = (props) => {
                 url: `http://localhost:8080/api/post/${props.props._id}/comment`,
                 method: 'put',
                 withCredentials: true,
-                data:{userId: user.user._id, username: user.user.username, desc: comment}
+                data:{id:nanoid(), userId: user.user._id, username: user.user.username, desc: comment}
             }).then(res=>{
                 window.location.reload();
             }).catch(e=>{
