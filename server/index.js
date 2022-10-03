@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(morgan('common'));
 // app.use(cors());
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://ethan-book-server.onrender.com",
     credentials: true,
     optionSuccessStatus: 200
 }));
@@ -38,7 +38,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/post', postRoute);
 
 //test
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.status(200).json('welcome(test)')
 })
 
