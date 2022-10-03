@@ -9,7 +9,6 @@ import cookieParser from 'cookie-parser';
 import userRoute from './routes/users.js'
 import authRoute from './routes/auth.js'
 import postRoute from './routes/posts.js'
-import {verifyToken} from "./utilities/verifyToken.js";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -37,6 +36,11 @@ app.use(express.urlencoded({extended: true}));
 app.use('/api/user', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/post', postRoute);
+
+//test
+app.get('/', (req, res)=>{
+    res.status(200).json('welcome(test)')
+})
 
 
 app.listen(PORT, () => {
