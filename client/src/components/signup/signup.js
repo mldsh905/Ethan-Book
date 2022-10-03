@@ -35,7 +35,7 @@ const Signup = () => {
             data: info
         }).then(
             res => {
-                navigate('/login')
+                navigate('/')
             }
         ).catch(e => {
             // setMsg(e.response.data.message)
