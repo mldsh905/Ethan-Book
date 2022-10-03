@@ -13,7 +13,7 @@ const Rightbar = () => {
     useEffect(() => {
         const fetchFriends = () => {
             axios({
-                url: 'http://localhost:8080/api/user/find/friends',
+                url: `${process.env.REACT_APP_ADDRESS}/api/user/find/friends`,
                 method: 'post',
                 withCredentials: true,
                 data: {id: user.user._id}
@@ -24,7 +24,7 @@ const Rightbar = () => {
         }
         const fetchFollowers = () => {
             axios({
-                url: 'http://localhost:8080/api/user/find/followers',
+                url: `${process.env.REACT_APP_ADDRESS}/api/user/find/followers`,
                 method: 'post',
                 withCredentials: true,
                 data: {id: user.user._id}
@@ -35,7 +35,7 @@ const Rightbar = () => {
         }
         const fetchFollowings = () => {
             axios({
-                url: 'http://localhost:8080/api/user/find/followings',
+                url: `${process.env.REACT_APP_ADDRESS}/api/user/find/followings`,
                 method: 'post',
                 withCredentials: true,
                 data: {id: user.user._id}

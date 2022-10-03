@@ -29,7 +29,7 @@ const Signup = () => {
     const handleSubmit = () => {
         if (info.confirmPassword !== info.password) return alert('password is not same!');
         axios({
-            url: 'http://localhost:8080/api/auth/register',
+            url: `${process.env.REACT_APP_ADDRESS}/api/auth/register`,
             method: 'post',
             withCredentials: true,
             data: info

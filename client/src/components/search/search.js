@@ -14,7 +14,7 @@ const Search = () => {
     useEffect(()=>{
         const fetchUser = () => {
             axios({
-                url: 'http://localhost:8080/api/user/find/people',
+                url: `${process.env.REACT_APP_ADDRESS}/api/user/find/people`,
                 withCredentials:true,
                 data:{id: user.user._id, key:search.search},
                 method: 'post'

@@ -17,7 +17,7 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchData = () => {
-            axios.get(`http://localhost:8080/api/post/get/posts/${id}`)
+            axios.get(`${process.env.REACT_APP_ADDRESS}/api/post/get/posts/${id}`)
                 .then(res => {
                     setPost(res.data);
                     setUser(true)
@@ -25,7 +25,7 @@ const Profile = () => {
                 .catch(e => console.log(e))
         }
         const fetchUserInfo = () => {
-            axios.get(`http://localhost:8080/api/user/${id}`)
+            axios.get(`${process.env.REACT_APP_ADDRESS}/api/user/${id}`)
                 .then(res => {
                     setUserInfo(res.data);
                     if (res.data.followers.includes(profile.user._id)) {
@@ -45,7 +45,7 @@ const Profile = () => {
     const profile = useSelector(state=>state.user);
     const handleFollow = () => {
         axios({
-            url:`http://localhost:8080/api/user/${id}/follow`,
+            url:`${process.env.REACT_APP_ADDRESS}/api/user/${id}/follow`,
             method: 'put',
             withCredentials:true,
             data:{id:profile.user._id}

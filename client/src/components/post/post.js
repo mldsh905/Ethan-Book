@@ -18,7 +18,7 @@ const Post = (props) => {
     // console.log(user.user);
     useEffect(() => {
         const fetchUser = () => {
-            axios.get(`http://localhost:8080/api/user/${props.props.id}`)
+            axios.get(`${process.env.REACT_APP_ADDRESS}/api/user/${props.props.id}`)
                 .then(res => {
                     setPostUser(res.data);
                 }).catch(e => console.log(e))
@@ -26,7 +26,7 @@ const Post = (props) => {
 
         const fetchPost = () => {
             axios({
-                url: `http://localhost:8080/api/post/${props.props._id}`,
+                url: `${process.env.REACT_APP_ADDRESS}/api/post/${props.props._id}`,
                 method: 'get',
                 withCredentials: true
             }).then(res => {
@@ -47,7 +47,7 @@ const Post = (props) => {
     const submitComment = () => {
         if (comment !== ''){
             axios({
-                url: `http://localhost:8080/api/post/${props.props._id}/comment`,
+                url: `${process.env.REACT_APP_ADDRESS}/api/post/${props.props._id}/comment`,
                 method: 'put',
                 withCredentials: true,
                 data:{id:nanoid(), userId: user.user._id, username: user.user.username, desc: comment}
@@ -59,7 +59,7 @@ const Post = (props) => {
     }
     const handleRecommend = () => {
         axios({
-            url: `http://localhost:8080/api/post/${props.props._id}/like`,
+            url: `${process.env.REACT_APP_ADDRESS}/api/post/${props.props._id}/like`,
             method: 'put',
             withCredentials: true,
             data: {id: user.user._id}

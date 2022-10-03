@@ -15,7 +15,7 @@ const Share = () => {
     const handleShare = () => {
         // console.log(share);
         axios({
-            url:'http://localhost:8080/api/post',
+            url:`${process.env.REACT_APP_ADDRESS}/api/post`,
             method:'post',
             data:share,
             withCredentials:true

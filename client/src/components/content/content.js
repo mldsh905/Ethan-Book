@@ -12,7 +12,7 @@ const Content = () => {
 
     useEffect(()=>{
         const fetchPost = () => {
-            axios.get(`http://localhost:8080/api/post/get/allPosts/${user.user._id}`,{withCredentials:true})
+            axios.get(`${process.env.REACT_APP_ADDRESS}/api/post/get/allPosts/${user.user._id}`,{withCredentials:true})
                 .then(
                     res => {
                         setPost(res.data.sort((b,a)=>{

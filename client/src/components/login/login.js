@@ -21,7 +21,7 @@ const Login = () => {
     }
     const handleSubmit = () => {
         axios({
-            url: 'http://localhost:8080/api/auth/login',
+            url: `${process.env.REACT_APP_ADDRESS}/api/auth/login`,
             method: 'post',
             withCredentials: true,
             data: login
@@ -35,7 +35,7 @@ const Login = () => {
     }
     const handleGuest = () => {
         axios({
-            url: 'http://localhost:8080/api/auth/login',
+            url: `${process.env.REACT_APP_ADDRESS}/api/auth/login`,
             method: 'post',
             withCredentials: true,
             data: {
