@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(morgan('common'));
 // app.use(cors());
 app.use(cors({
-    origin: "https://ethan-book-server.onrender.com",
+    origin: ["http://localhost:3000","https://ethan-book-client.onrender.com"],
     credentials: true,
     optionSuccessStatus: 200
 }));
