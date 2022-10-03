@@ -57,7 +57,7 @@ const Signup = () => {
                     <input type="text" onChange={handleUsernameChange} placeholder="username"/>
                     <input type="password" onChange={handlePasswordChange} placeholder="password"/>
                     <input type="password" onChange={handleConfirmPasswordChange} placeholder="confirm password"/>
-                    <button className={classes.loginbtn} onClick={()=>navigate('/login')}>Already have an account? Login</button>
+                    <button className={classes.loginbtn} onClick={()=>navigate('/')}>Already have an account? Login</button>
                     <button className={classes.newaccountbtn} onClick={handleSubmit}>Create a New Account</button>
                 </div>
             </div>

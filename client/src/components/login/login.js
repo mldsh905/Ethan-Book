@@ -45,7 +45,7 @@ const Login = () => {
         }).then(res => {
             // console.log(res.data);
             dispatch(setUser(res.data));
-            navigate('/')
+            navigate('/home')
         }).catch(e => {
             setMsg(e.response.data);
         })
