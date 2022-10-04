@@ -21,3 +21,8 @@ ul{
     display: grid;
     gap: 10px;
 }
+@media (max-width: 768px) {
+    .wrapper{
+        display: none;
+    }
+}

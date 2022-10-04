@@ -6,18 +6,27 @@
     top: 50px;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     padding: 30px;
 }
-.list{
+
+.list {
     display: grid;
     gap: 15px;
 }
-.listItem{
+
+.listItem {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     justify-content: start;
     gap: 15px;
     font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        display: none;
+    }
 }

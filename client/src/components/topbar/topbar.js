@@ -1,16 +1,31 @@
 import React, {useState} from 'react';
 import classes from './topbar.module.css';
-import {Person, Message, Notifications, Search} from '@mui/icons-material';
+import {
+    Person,
+    Message,
+    Close,
+    MoreHoriz,
+    Notifications,
+    Search,
+    RssFeed,
+    Chat,
+    PlayCircle,
+    Group, Bookmark, HelpOutline, Work, Event, School
+} from '@mui/icons-material';
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {setUser} from "../../store/userSlice";
 import {setSearch} from "../../store/searchSlice";
+import Sidebar from "../sidebar/sidebar";
 
 const Topbar = () => {
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [rightBar, setRightBar] = useState(false);
+    const [list, setList] = useState(false);
 
     const handleLogout = () => {
         axios({
@@ -20,7 +35,7 @@ const Topbar = () => {
         }).then(
             () => {
                 dispatch(setUser(false));
-                navigate('/login')
+                navigate('/')
             }
         ).catch(e => console.log(e))
     }
@@ -32,6 +47,20 @@ const Topbar = () => {
     return (
         <div className={classes.wrapper}>
             <div className={classes.container}>
+                <div className={classes.responsiveMenu}>
+                    <span onClick={()=>{setList(!list);setRightBar(false)}}>Menu</span>
+                </div>
+                <div className={!list?classes.listClose: classes.list} onClick={()=>{alert('function to be developed~')}}>
+                    <span>Feed</span>
+                    <span>Chats</span>
+                    <span>Videos</span>
+                    <span>Groups</span>
+                    <span>Bookmarks</span>
+                    <span>Questions</span>
+                    <span>Jobs</span>
+                    <span>Events</span>
+                    <span>Jobs</span>
+                </div>
                 <Link to="/" className={classes.logo}>
                     <span>
                     Ethan-Facebook
@@ -43,35 +72,25 @@ const Topbar = () => {
                     </Link>
                     <input type="text" onChange={handleSearch} placeholder="Search for friends"/>
                 </div>
-                <div className={classes.topBarRight}>
-                    {/*<div className={classes.HT}>*/}
-                    {/*    <span>Homepage</span>*/}
-                    {/*    <span>Timeline</span>*/}
-                    {/*</div>*/}
-                    <Link to={'/'} className={classes.homepage}>Home</Link>
+                <div className={classes.rightBarIcon} onClick={() => {
+                    setRightBar(!rightBar);
+                    setList(false)
+                }}>
+                    {rightBar ? <Close/> : <MoreHoriz/>}
+                </div>
+                <div className={rightBar ? classes.topBarRightClose : classes.topBarRight}>
+                    <Link to={'/home'} className={classes.homepage}>Home</Link>
                     {
                         user.user ?
                             <div className={classes.icon}>
                                 <div className={classes.name}>{user.user.username}</div>
-                                {/*<div className={classes.iconItem}>*/}
-                                {/*    <Person></Person>*/}
-                                {/*    <span>1</span>*/}
-                                {/*</div>*/}
-                                {/*<div className={classes.iconItem}>*/}
-                                {/*    <Message></Message>*/}
-                                {/*    <span>1</span>*/}
-                                {/*</div>*/}
-                                {/*<div className={classes.iconItem}>*/}
-                                {/*    <Notifications></Notifications>*/}
-                                {/*    <span>1</span>*/}
-                                {/*</div>*/}
                                 <div className={classes.logout} onClick={handleLogout}>
                                     Logout
                                 </div>
                             </div>
                             :
                             <div className={classes.loginBtn}>
-                                <Link to='/login' className={classes.loginBtnIcon}>Login</Link>
+                                <Link to='/' className={classes.loginBtnIcon}>Login</Link>
                                 <Link to='/signup' className={classes.loginBtnIcon}>Register</Link>
                             </div>
                     }
