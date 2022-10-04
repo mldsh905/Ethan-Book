@@ -35,7 +35,9 @@
     border: 1px grey solid;
 }
 .secondLayer{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
     justify-content: space-between;
     margin: 10px 0;
 }
@@ -49,6 +51,7 @@
 }
 .icon{
     display: flex;
+    /*justify-content: space-between;*/
     gap: 10px;
 }
 .iconItem{
@@ -68,4 +71,10 @@
 }
 .feeling{
     color: #3973dd;
+}
+
+@media (max-width: 500px) {
+    .iconItem span{
+        display: none;
+    }
 }

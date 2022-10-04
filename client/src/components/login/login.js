@@ -34,6 +34,7 @@ const Login = () => {
         })
     }
     const handleGuest = () => {
+        setMsg('log in, please wait...')
         axios({
             url: `${process.env.REACT_APP_ADDRESS}/api/auth/login`,
             method: 'post',

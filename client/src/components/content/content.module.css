@@ -1,6 +1,6 @@
 .container{
     flex: 5;
-    min-width: 460px;
+    /*min-width: 460px;*/
 }
 .wrapper{
     padding: 20px;
