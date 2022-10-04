@@ -67,3 +67,12 @@
 .login button, .login span{
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .container{
+        grid-template-columns: 1fr;
+        min-width: 200px;
+    }
+    .intro{
+        display: none;
+    }
+}
