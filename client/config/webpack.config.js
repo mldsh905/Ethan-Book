@@ -203,16 +203,16 @@ module.exports = function (webpackEnv) {
     entry: paths.appIndexJs,
     output: {
       // The build folder.
-      // path: paths.appBuild,
-      path: path.resolve(__dirname, 'public'),
+      path: paths.appBuild,
+      // path: path.resolve(__dirname, 'public'),
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isEnvDevelopment,
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
-      // filename: isEnvProduction
-      //   ? 'static/js/[name].[contenthash:8].js'
-      //   : isEnvDevelopment && 'static/js/bundle.js',
-      filename: 'bundle.js',
+      filename: isEnvProduction
+        ? 'static/js/[name].[contenthash:8].js'
+        : isEnvDevelopment && 'static/js/bundle.js',
+      // filename: 'bundle.js',
       // There are also additional JS chunk files if you use code splitting.
       chunkFilename: isEnvProduction
         ? 'static/js/[name].[contenthash:8].chunk.js'
