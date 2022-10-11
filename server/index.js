@@ -55,7 +55,8 @@ app.use(express.static(__dirname + '../client/public'));
 // app.use(express.static(__dirname));
 // app.use(express.static("public"));
 app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
+    // res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"), err => {
         if (err) res.status(500).send(err);
     });
 });
