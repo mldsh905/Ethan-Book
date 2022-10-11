@@ -48,29 +48,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// app.use(express.static("../client/public"));
-app.use(express.static(__dirname + '../client/public'));
-// app.use(express.static(__dirname, "../client/public"));
-// app.use(express.static(__dirname, "/"));
-// app.use(express.static(__dirname));
-// app.use(express.static("public"));
+app.use(express.static(__dirname + '../'));
+app.use(express.static(__dirname + '/'));
 app.get("/*", (req, res) => {
-    // res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
+    // res.sendFile(path.join(__dirname, "../"), err => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"), err => {
         if (err) res.status(500).send(err);
     });
 });
-// app.use(express.static("../client/public"));
-// app.use(express.static(__dirname, "../client/public"));
-// app.use(express.static(__dirname, "/"));
-// app.use(express.static(__dirname));
-// app.use(express.static("public"));
-
-
-// app.use(express.static(__dirname + '../client/public'));
-// app.get('*', function (request, response) {
-//     response.sendFile(path.resolve(__dirname, '../client/public/index.html'));
-// });
 
 
 app.listen(PORT, () => {
