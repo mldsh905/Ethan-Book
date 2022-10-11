@@ -45,29 +45,31 @@ app.get('/', (req, res) => {
 
 //route catch all
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // app.use(express.static("../client/public"));
+app.use(express.static(__dirname + '../client/public'));
 // app.use(express.static(__dirname, "../client/public"));
 // app.use(express.static(__dirname, "/"));
 // app.use(express.static(__dirname));
 // app.use(express.static("public"));
-// app.get("/*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
-//         if (err) res.status(500).send(err);
-//     });
-// });
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
+        if (err) res.status(500).send(err);
+    });
+});
 // app.use(express.static("../client/public"));
 // app.use(express.static(__dirname, "../client/public"));
 // app.use(express.static(__dirname, "/"));
 // app.use(express.static(__dirname));
 // app.use(express.static("public"));
 
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.use(express.static(__dirname + '../client/public'));
-app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../client/public/index.html'));
-});
+
+// app.use(express.static(__dirname + '../client/public'));
+// app.get('*', function (request, response) {
+//     response.sendFile(path.resolve(__dirname, '../client/public/index.html'));
+// });
 
 
 app.listen(PORT, () => {
