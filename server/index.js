@@ -45,12 +45,15 @@ app.get('/', (req, res) => {
 
 //route catch all
 import path from 'path';
+app.use(express.static("../client/public"));
+app.use(express.static("public"));
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
         if (err) res.status(500).send(err);
     });
 });
-// app.use(express.static("public"));
+app.use(express.static("../client/public"));
+app.use(express.static("public"));
 
 
 app.listen(PORT, () => {
