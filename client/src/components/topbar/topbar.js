@@ -61,7 +61,7 @@ const Topbar = () => {
                     <span>Events</span>
                     <span>Jobs</span>
                 </div>
-                <Link to="/" className={classes.logo}>
+                <Link to="/home" className={classes.logo}>
                     <span>
                     Ethan-Facebook
                     </span>
