@@ -16,8 +16,8 @@ function App() {
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <div>
-                    {/*<BrowserRouter>*/}
-                    <HashRouter>
+                    <BrowserRouter>
+                    {/*<HashRouter>*/}
                         <Routes>
                             <Route path='/home' element={<Home/>}/>
                             {/*<Route path='/profile' element={<Profile/>}/>*/}
@@ -26,8 +26,8 @@ function App() {
                             <Route path='/signup' element={<Signup/>}/>
                             <Route path='/search' element={<Search/>}/>
                         </Routes>
-                    </HashRouter>
-                    {/*</BrowserRouter>*/}
+                    {/*</HashRouter>*/}
+                    </BrowserRouter>
                 </div>
             </PersistGate>
         </Provider>

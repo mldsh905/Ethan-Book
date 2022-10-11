@@ -43,6 +43,15 @@ app.get('/', (req, res) => {
     res.status(200).json('welcome(test)')
 })
 
+//route catch all
+import path from 'path';
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/public/index.html"), err => {
+        if (err) res.status(500).send(err);
+    });
+});
+// app.use(express.static("public"));
+
 
 app.listen(PORT, () => {
     console.log('backend starts');
