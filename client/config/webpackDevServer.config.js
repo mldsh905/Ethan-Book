@@ -1,5 +1,7 @@
 'use strict';
+'use strict';
 
+const fs = require('fs');
 const fs = require('fs');
 const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
