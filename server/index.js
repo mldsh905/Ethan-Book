@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(morgan('common'));
 // app.use(cors());
 app.use(cors({
-    origin: ["http://localhost:3000","https://ethan-book-client.onrender.com"],
+    origin: ["http://localhost:3000", "https://ethan-book-client.onrender.com"],
     credentials: true,
     optionSuccessStatus: 200
 }));
@@ -44,10 +44,10 @@ app.get('/', (req, res) => {
 })
 
 //route catch all
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // app.use(express.static(__dirname + '../'));
 // app.use(express.static(__dirname + '/'));
 // app.get("/*", (req, res) => {
@@ -55,8 +55,10 @@ app.get('/', (req, res) => {
 //         if (err) res.status(500).send(err);
 //     });
 // });
-
-
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen(PORT, () => {
     console.log('backend starts');
