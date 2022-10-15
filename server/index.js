@@ -55,24 +55,7 @@ app.get('/', (req, res) => {
 //         if (err) res.status(500).send(err);
 //     });
 // });
-import * as path from "path";
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
-        if (err) {
-            res.status(500).send(err)
-        }
-    })
-})
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'), function(err) {
-        if (err) {
-            res.status(500).send(err)
-        }
-    })
-})
+
 
 
 app.listen(PORT, () => {
