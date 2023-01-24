@@ -44,10 +44,10 @@ app.get('/', (req, res) => {
 })
 
 //route catch all
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// import path from 'path';
+// import { fileURLToPath } from 'url';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 // app.use(express.static(__dirname + '../'));
 // app.use(express.static(__dirname + '/'));
 // app.get("/*", (req, res) => {

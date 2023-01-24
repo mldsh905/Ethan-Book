@@ -34,7 +34,7 @@ const Login = () => {
         })
     }
     const handleGuest = () => {
-        setMsg('log in, please wait...')
+        setMsg('log in, please wait... the backend is deployed on Render.com, you may wait up to 1-2mins for your first time login')
         axios({
             url: `${process.env.REACT_APP_ADDRESS}/api/auth/login`,
             method: 'post',
@@ -60,17 +60,21 @@ const Login = () => {
                     <span className={classes.text}>Connect with friends and the world around you</span>
                 </div>
                 <div className={classes.login}>
-                    <input type="text" placeholder="username" onChange={handleUsername}/>
-                    <input type="password" placeholder="password" onChange={handlePassword}/>
+                    <div className={classes.login1}>
+                        <input type="text" placeholder="username" onChange={handleUsername}/>
+                        <input type="password" placeholder="password" onChange={handlePassword}/>
+                    </div>
                     <div className={classes.msg}>{msg}</div>
-                    <button className={classes.loginbtn} onClick={handleSubmit}>Log In</button>
-                    <span>Forget Password?</span>
-                    <button className={classes.newaccountbtn} onClick={handleGuest}>Use Guest Account
-                    </button>
-                    <button className={classes.newaccountbtn} onClick={() => {
-                        navigate('/signup')
-                    }}>Create a New Account
-                    </button>
+                    <div className={classes.login3}>
+                        <button className={classes.loginbtn} onClick={handleSubmit}>Log In</button>
+                        <button className={classes.forgot} onClick={()=>{alert('Please contact admin')}}>Forget Password?</button>
+                        <button className={classes.newaccountbtn} onClick={handleGuest}>Use Guest Account
+                        </button>
+                        <button className={classes.newaccountbtn} onClick={() => {
+                            navigate('/signup')
+                        }}>Create a New Account
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
