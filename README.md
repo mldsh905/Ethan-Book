@@ -1,6 +1,6 @@
 ## Introduction
 
-This application clone Facebook.com. You can register or just login as a guest. On this website, you can post your thoughts, like other's post, make a comment, follow others, and see other people's information. 
+Ethan-Book is a mobile app that allows users to enjoy social media online. This application clone Facebook.com. Users can register or just login as a guest. On this website, users can post their thoughts, like other's post, make a comment, follow others, and see other people's information. 
 
 ## Screenshot
 
@@ -26,3 +26,6 @@ https://ethan-book-client.onrender.com/home
 * Post your thoughts and comments
 * Like a post
 * See other user's information
+
+## Contributing
+We welcome contributions from the community.
